@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Analyzer</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: #0a0f1c;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.7);
+}
+
+nav h2 {
+    color: #00e5ff;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 40px;
+}
+
+.hero img {
+    width: 60%;
+    border-radius: 10px;
+}
+
+/* SECTION */
+.section {
+    padding: 40px 80px;
+}
+
+/* BOX */
+.step-box {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+button {
+    background: orange;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+/* IMAGE */
+img {
+    width: 300px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+/* RESULT */
+.result {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0d1324;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>Fractal Dimension</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/process">Analyzer</a>
+        <a href="/review">Review</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="{{ url_for('static', filename='imagesmandel.jpeg') }}">
+</section>
+
+<div class="section">
+
+    <div class="step-box">
+        <h2>Upload & Analyze Image</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required><br><br>
+
+            <label>Threshold:</label>
+            <input type="range" name="threshold" min="0" max="255" value="128"><br><br>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if image %}
+        <div class="result">
+
+            <h3>Original Image</h3>
+            <img src="{{ image }}">
+
+            <h3>Binary Image</h3>
+            <img src="{{ binary }}">
+
+            <h3>Fractal Dimension: {{ dimension }}</h3>
+
+            <h3>Graph</h3>
+            <img src="{{ graph }}">
+
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Fractal Dimension Project</p>
+</footer>
+
+</body>
+</html>

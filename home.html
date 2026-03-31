@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fractal Dimension</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: #0a0f1c;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.6);
+}
+
+nav h2 {
+    color: #00e5ff;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 50px;
+}
+
+.hero h1 {
+    font-size: 45px;
+}
+
+/* SLIDE IMAGE */
+.slide img {
+    width: 60%;
+    border-radius: 10px;
+}
+
+/* TEXT */
+.text-section {
+    padding: 40px 80px;
+    max-width: 800px;
+}
+
+/* APPLICATIONS */
+.app-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.app-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.app-box {
+    width: 30%;
+}
+
+.app-box img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0d1324;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>Fractal Dimension</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/process">Analyzer</a>
+        <a href="/review">Review</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Fractal Dimension</h1>
+</section>
+
+<!-- SLIDE IMAGE -->
+<div class="slide" style="text-align:center;">
+    <img src="{{ url_for('static', filename='imagesmandel.jpeg') }}">
+</div>
+
+<!-- WHAT IS FRACTAL -->
+<div class="text-section">
+    <h2>What is Fractal Dimension?</h2>
+    <p>
+               Fractal dimension is a measure that describes how complex a shape is. 
+               Unlike normal dimensions (1D, 2D, 3D), fractals can have non-integer dimensions,
+               showing how detail in a pattern changes with scale. 
+               It helps us understand structures that are too irregular for traditional geometry.
+    </p>
+</div>
+
+<!-- WHY USEFUL -->
+<div class="text-section">
+    <h2>Why it is useful?</h2>
+    <p>
+ 
+       Fractal dimension reveals the hidden complexity of patterns that look chaotic at first glance.
+         It is used in fields like image processing, nature analysis, medical imaging, and computer graphics 
+         to better understand patterns and structure.
+    </p>
+</div>
+
+<!-- APPLICATIONS -->
+<section class="app-section">
+    <h2>Real World Applications</h2>
+
+    <div class="app-container">
+
+        <div class="app-box">
+            <img src="{{ url_for('static', filename='nature analysis.jpeg') }}">
+            <h3>Natural Analysis</h3>
+        </div>
+
+        <div class="app-box">
+            <img src="{{ url_for('static', filename='image.jpeg') }}">
+            <h3>Image Processing</h3>
+        </div>
+
+        <div class="app-box">
+            <img src="{{ url_for('static', filename='medical field.jpeg') }}">
+            <h3>Medical Field</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Fractal Dimension Project</p>
+</footer>
+
+</body>
+</html>
